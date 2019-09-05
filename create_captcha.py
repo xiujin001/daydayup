@@ -27,6 +27,7 @@ class Captcha:
                  sources=None, save_format='png'):
         self.captcha_size = captcha_size
         self.font_size = font_size
+
         self.text_number = text_number
         self.line_number = line_number
         self.background_color = background_color
