@@ -7,6 +7,9 @@ import random
 from PIL import Image, ImageDraw, ImageFont
 
 
+# pillow是PIL（Python成像库）的一个分支，它不再被维护。所以，为了保持向后兼容性，
+# 往往使用旧的模块名称——PIL。所以，我们直接import PIL就可以了。
+
 class Captcha:
     '''
     captcha_size:图片验证码的尺寸
@@ -20,7 +23,7 @@ class Captcha:
 
     def __init__(self, captcha_size=(150, 80),
                  font_size=40, text_number=4,
-                 line_number=7, background_color=(255, 255, 255),
+                 line_number=6, background_color=(255, 255, 255),
                  sources=None, save_format='png'):
         self.captcha_size = captcha_size
         self.font_size = font_size
@@ -39,7 +42,7 @@ class Captcha:
         return ''.join(text)
 
     def get_font_color(self):
-        # 随机获取验证码中的字符的rgb颜色
+        # 随机获取验证码中的字符的RGB颜色
         font_color = (random.randint(0, 150), random.randint(0, 150), random.randint(0, 150))
         return font_color
 
