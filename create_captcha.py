@@ -12,22 +12,23 @@ from PIL import Image, ImageDraw, ImageFont
 
 class Captcha:
     '''
-    captcha_size:图片验证码的尺寸
-    font_size:验证字体的大小
-    text_number:验证码的字符数
-    line_number:干扰线条数量
-    background_color:图片背景色
-    sources:取样字符集
-    save_format:图片保存格式
+    :param captcha_size:图片验证码的尺寸
+    :param font_size:验证字体的大小
+    :param text_number:验证码的字符数
+    :param line_number:干扰线条数量
+    :param background_color:图片背景色
+    :param sources:取样字符集
+    :param save_format:图片保存格式
+    :return:
     '''
 
     def __init__(self, captcha_size=(150, 80),
                  font_size=40, text_number=4,
                  line_number=6, background_color=(255, 255, 255),
                  sources=None, save_format='png'):
+
         self.captcha_size = captcha_size
         self.font_size = font_size
-
         self.text_number = text_number
         self.line_number = line_number
         self.background_color = background_color
@@ -148,5 +149,6 @@ class Captcha:
         captcha.show()
 
 
-a = Captcha()
-a.make_captcha()
+if __name__ == '__main__':
+    a = Captcha()
+    a.make_captcha()
